@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from math import sqrt
 from collections import Counter
 
@@ -99,7 +101,8 @@ def canonical_decomposition(n):  # выводит каноническое ра�
     cd = sorted(list(Counter(pn).items()))
     print_str = ''
     for x, y in cd:
-        print_str += f'{x} * ' if y == 1 else f'{x}**{y} * '
+        # print_str += f'{x} * ' if y == 1 else f'{x}**{y} * ' # pytest не понимает: SyntaxError: invalid syntax
+        print_str += '{} * '.format(x) if y == 1 else '{}**{} * '.format(x, y)
     return print_str[:-3]
 
 
